@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>/404.html</loc>
+  </url>
+  <url>
+    <loc>/authors.html</loc>
+  </url>
+  <url>
+    <loc>/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/ct_mean.html</loc>
+  </url>
+  <url>
+    <loc>/reference/ct_meanCol.html</loc>
+  </url>
+  <url>
+    <loc>/reference/ct_median.html</loc>
+  </url>
+  <url>
+    <loc>/reference/ct_medianCol.html</loc>
+  </url>
+  <url>
+    <loc>/reference/ct_mode.html</loc>
+  </url>
+  <url>
+    <loc>/reference/ct_modeCol.html</loc>
+  </url>
+  <url>
+    <loc>/reference/hello.html</loc>
+  </url>
+  <url>
+    <loc>/reference/index.html</loc>
+  </url>
+</urlset>
