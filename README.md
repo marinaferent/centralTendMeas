@@ -1,4 +1,4 @@
-# centralTendMeas
+# centralTendMeas: Measures of central tendency for vectors and columns in matrices
 
 R package for computing the mean, median and mode values for vectors and
 each column in matrices (dataframes). Works for multimodal distributions
@@ -26,13 +26,16 @@ install_github("marinaferent/centralTendMeas")
 
 ``` r
 library(centralTendMeas)
-#computing the arithmetic mean of the values of a vector:
+```
+Computing the *arithmetic mean* of the values of a *vector*:
+
+``` r
 ct_mean(c(10,50,12,43))
 ```
 
     ## [1] 28.75
 
-Computing the arithmetic mean value for each column in a matrix or a data frame:
+Computing the *arithmetic mean* value for *each column in a matrix/data frame*:
 ``` r
 
 dataTest=cbind(c(10,50,12,43), c(100, 101, 102, 103), c(1, 1, 5,4))
@@ -45,29 +48,29 @@ ct_meanCol(dataTest)
     ## Variable 2 101.50
     ## Variable 3   2.75
 
+Computing the *median value* of the values of a *vector*:
 ``` r
-#computing the median value of the values of a vector:
 ct_median(c(10,50,12,43))
-```
-
-    ## [1] 12
-
-``` r
 #--note that length(c(10,50,12,43)) is 4 and thus, divisible by 2
-
-ct_median(c(10,50,12,43, 10))
 ```
 
     ## [1] 12
 
 ``` r
+ct_median(c(10,50,12,43, 10))
 #--note that length(c(10,50,12,43, 10)) is 5 and thus, not divisible by 2
+```
 
-#computing the median value for each column in a matrix or a data frame:
-dataTest1=cbind(c(10,50,12,43), c(100, 101, 102, 103), c(1, 1, 5,4))
-#--note that length(dataTest1[,1]) is 4 and thus divisible by 2
-colnames(dataTest1)=c("Variable 1", "Variable 2", "Variable 3")
-ct_medianCol(dataTest1)
+    ## [1] 12
+
+
+Computing the *median value* for *each column in a matrix/data frame*:
+
+``` r
+dataTest=cbind(c(10,50,12,43), c(100, 101, 102, 103), c(1, 1, 5,4))
+#--note that length(dataTest[,1]) is 4 and thus divisible by 2
+colnames(dataTest)=c("Variable 1", "Variable 2", "Variable 3")
+ct_medianCol(dataTest)
 ```
 
     ##            Median
@@ -76,10 +79,10 @@ ct_medianCol(dataTest1)
     ## Variable 3    2.5
 
 ``` r
-dataTest2=cbind(c(10,50,12,43,10), c(100, 101, 102, 103, 103), c(1, 1, 5,4, 7))
-#--note that length(dataTest2[,1]) is 5 and thus NOT divisible by 2
-colnames(dataTest2)=c("Variable 1", "Variable 2", "Variable 3")
-ct_medianCol(dataTest2)
+dataTest=cbind(c(10,50,12,43,10), c(100, 101, 102, 103, 103), c(1, 1, 5,4, 7))
+#--note that length(dataTest[,1]) is 5 and thus NOT divisible by 2
+colnames(dataTest)=c("Variable 1", "Variable 2", "Variable 3")
+ct_medianCol(dataTest)
 ```
 
     ##            Median
@@ -87,8 +90,9 @@ ct_medianCol(dataTest2)
     ## Variable 2    102
     ## Variable 3      4
 
+
+Finding the *mode value(s)* of a numeric *vector*:
 ``` r
-#finding the mode value(s) of a numeric vector:
 ct_mode(c(10,10,12,43))
 ```
 
@@ -100,8 +104,9 @@ ct_mode(c(10,43,10,12,43))
 
     ## [1] 10 43
 
+Finding the *mode value(s)* for *each column in a matrix/data frame*:
+
 ``` r
-#finding the mode value(s) for each column in a matrix or a data frame:
 dataTest=cbind(c(10,10,50,12,50), c(100, 101, 102, 102, 103), c(1, 1, 5,4, 4))
 colnames(dataTest)=c("Variable 1", "Variable 2", "Variable 3")
 ct_modeCol(dataTest)
@@ -111,3 +116,7 @@ ct_modeCol(dataTest)
     ## Variable 1   10   50
     ## Variable 2  102   NA
     ## Variable 3    1    4
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
