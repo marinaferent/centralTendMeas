@@ -32,8 +32,9 @@ ct_mean(c(10,50,12,43))
 
     ## [1] 28.75
 
+Computing the arithmetic mean value for each column in a matrix or a data frame:
 ``` r
-#computing the arithmetic mean value for each column in a matrix or a data frame:
+
 dataTest=cbind(c(10,50,12,43), c(100, 101, 102, 103), c(1, 1, 5,4))
 colnames(dataTest)=c("Variable 1", "Variable 2", "Variable 3")
 ct_meanCol(dataTest)
