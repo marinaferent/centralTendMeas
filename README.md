@@ -13,14 +13,9 @@ the course *Basics of R programming language in statistical analysis*.
 library(devtools)
 ```
 
-    ## Loading required package: usethis
-
 ``` r
 install_github("marinaferent/centralTendMeas")
 ```
-
-    ## Skipping install of 'centralTendMeas' from a github remote, the SHA1 (7fe55d25) has not changed since last install.
-    ##   Use `force = TRUE` to force installation
 
 ## Usage
 
