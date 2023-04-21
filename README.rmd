@@ -1,0 +1,63 @@
+---
+title: "README.md"
+author: "Marina FERENT"
+date: "2023-04-21"
+output:  rmarkdown::github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# centralTendMeas
+R package for computing the mean, median and mode values for vectors and each column in matrices (dataframes). Works for multimodal distributions also.
+
+The functions were developed for instructional purposes as examples for the course *Basics of R programming language in statistical analysis*.
+
+## Installation
+```{r}
+library(devtools)
+install_github("marinaferent/centralTendMeas")
+```
+
+## Usage
+```{r}
+library(centralTendMeas)
+#computing the arithmetic mean of the values of a vector:
+ct_mean(c(10,50,12,43))
+
+#computing the arithmetic mean value for each column in a matrix or a data frame:
+dataTest=cbind(c(10,50,12,43), c(100, 101, 102, 103), c(1, 1, 5,4))
+colnames(dataTest)=c("Variable 1", "Variable 2", "Variable 3")
+ct_meanCol(dataTest)
+
+#computing the median value of the values of a vector:
+ct_median(c(10,50,12,43))
+#--note that length(c(10,50,12,43)) is 4 and thus, divisible by 2
+
+ct_median(c(10,50,12,43, 10))
+#--note that length(c(10,50,12,43, 10)) is 5 and thus, not divisible by 2
+
+#computing the median value for each column in a matrix or a data frame:
+dataTest1=cbind(c(10,50,12,43), c(100, 101, 102, 103), c(1, 1, 5,4))
+#--note that length(dataTest1[,1]) is 4 and thus divisible by 2
+colnames(dataTest1)=c("Variable 1", "Variable 2", "Variable 3")
+ct_medianCol(dataTest1)
+
+dataTest2=cbind(c(10,50,12,43,10), c(100, 101, 102, 103, 103), c(1, 1, 5,4, 7))
+#--note that length(dataTest2[,1]) is 5 and thus NOT divisible by 2
+colnames(dataTest2)=c("Variable 1", "Variable 2", "Variable 3")
+ct_medianCol(dataTest2)
+
+
+#finding the mode value(s) of a numeric vector:
+ct_mode(c(10,10,12,43))
+ct_mode(c(10,43,10,12,43))
+
+#finding the mode value(s) for each column in a matrix or a data frame:
+dataTest=cbind(c(10,10,50,12,50), c(100, 101, 102, 102, 103), c(1, 1, 5,4, 4))
+colnames(dataTest)=c("Variable 1", "Variable 2", "Variable 3")
+ct_modeCol(dataTest)
+```
+
