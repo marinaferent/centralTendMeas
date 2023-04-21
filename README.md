@@ -1,8 +1,3 @@
-README.md
-================
-Marina FERENT
-2023-04-21
-
 # centralTendMeas
 
 R package for computing the mean, median and mode values for vectors and
